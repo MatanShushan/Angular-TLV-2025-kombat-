@@ -1,0 +1,6 @@
+<div class="power-bar" [class.right]="isRight()">
+  <div class="label">{{ label() | uppercase }}</div>
+  <div class="frame">
+    <div class="fill" [style.width.%]="percent()"></div>
+  </div>
+</div>

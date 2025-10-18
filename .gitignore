@@ -6,6 +6,7 @@
 /e2e/test-output/
 /.angular/
 .angular/
+public/
 
 # Node modules and dependency files
 /node_modules/
@@ -14,6 +15,8 @@
 
 # Environment files
 /.env
+.firebase/
+.firebaserc
 
 # Angular CLI and build artefacts
 /.angular-cli.json

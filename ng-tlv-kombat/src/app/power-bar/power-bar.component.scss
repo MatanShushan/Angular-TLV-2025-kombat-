@@ -1,0 +1,47 @@
+.power-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: min(44vw, 55vw);
+}
+
+.power-bar.right {
+  align-items: flex-end;
+}
+
+.label {
+  padding: 4px 12px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #e8f58d;
+  background: linear-gradient(#2a861a, #39a321);
+  border: 3px solid #e3e726; /* yellow border */
+  box-shadow: 0 0 0 2px #3a3a3a inset, 0 2px 0 rgba(0,0,0,0.2);
+}
+
+.frame {
+  position: relative;
+  height: 3vh;
+  width: 100%;
+  background: #a51515; /* red damage base */
+  border: 4px solid #e3e726; /* yellow frame */
+  box-shadow: 0 0 0 2px #3a3a3a inset, 0 2px 0 rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(#3ec132, #2e9d25);
+  transition: width 200ms ease;
+}
+
+.power-bar.right .fill {
+  left: auto;
+  right: 0;
+}

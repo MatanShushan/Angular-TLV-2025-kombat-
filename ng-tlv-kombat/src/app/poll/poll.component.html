@@ -1,0 +1,32 @@
+<main [class]="mainClass()">
+  <div class="top-bars">
+    <div class="bars">
+      <power-bar
+        label="The Keeper"
+        [value]="powers().power.open"
+        [max]="100"
+        side="left"
+      ></power-bar>
+      <power-bar
+        label="The Breaker"
+        [value]="powers().power.closed"
+        [max]="100"
+        side="right"
+      ></power-bar>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="pane left">
+      <img class="fighter" src="subzero-mk2-fix.gif" alt="Sub-Zero" />
+    </div>
+    <div class="pane center">
+      <div class="qr-container">
+        <img src="W3EFbP.svg" alt="QR Code" />
+      </div>
+    </div>
+    <div class="pane right">
+      <img class="fighter" src="scorpion-stance.gif" alt="Scorpion" />
+    </div>
+  </div>
+</main>

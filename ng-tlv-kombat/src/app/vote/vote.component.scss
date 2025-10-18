@@ -1,0 +1,77 @@
+:host {
+  display: block;
+}
+
+.vote-page {
+  position: relative;
+  min-height: 100svh;
+  padding: calc(env(safe-area-inset-top) + 16px) 16px calc(env(safe-area-inset-bottom) + 32px);
+  color: #f8e6c1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6)), url('/arena.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  image-rendering: pixelated;
+}
+
+.title {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+  font-size: clamp(28px, 8vw, 40px);
+  text-shadow: 0 2px 0 #000, 0 4px 0 #000, 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn {
+  -webkit-tap-highlight-color: transparent;
+  width: min(86vw, 380px);
+  padding: 18px 20px;
+  border: 0;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: clamp(20px, 6.8vw, 26px);
+  color: #fff;
+  box-shadow: 0 6px 0 #000, 0 10px 18px rgba(0, 0, 0, 0.45), inset -4px -4px rgba(0,0,0,0.35), inset 4px 4px rgba(255,255,255,0.1);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
+  image-rendering: pixelated;
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 #000, 0 8px 14px rgba(0, 0, 0, 0.4), inset -2px -2px rgba(0,0,0,0.35), inset 2px 2px rgba(255,255,255,0.1);
+}
+
+.btn:focus-visible {
+  outline: 3px solid #ffd166;
+  outline-offset: 3px;
+}
+.btn-open {
+  background: linear-gradient(#16a34a, #15803d);
+}
+
+.btn-closed {
+  background: linear-gradient(#dc2626, #b91c1c);
+}
+@media (max-width: 360px) {
+  .btn {
+    padding: 16px 18px;
+  }
+}
+
