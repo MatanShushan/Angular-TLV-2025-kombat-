@@ -14,10 +14,15 @@ export class PowerBarComponent {
   max = input<number>(100);
   side = input<'left' | 'right'>();
 
+  isFinish = input<boolean>();
+
   percent = computed(() => {
     const p = (this.value() / this.max()) * 100;
     return Math.max(0, Math.min(100, isFinite(p) ? p : 0));
   });
+
+  displayPercent = computed(() => Math.round(this.percent()));
+
 
   isRight = computed(() => this.side() === 'right');
 

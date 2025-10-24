@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { Firestore, collection, deleteDoc, doc, getDocs } from '@angular/fire/firestore';
+import { Component, inject, signal } from '@angular/core';
+import { Firestore, collection, deleteDoc, doc, getDocs, updateDoc, } from '@angular/fire/firestore';
 
 interface Vote {
   vote: 'open' | 'closed';
@@ -13,23 +13,41 @@ interface Vote {
   styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent {
-
   firestore = inject(Firestore);
-  votesCollection = collection(this.firestore, 'votes');
 
+  round = signal(1);
 
-  finishBattle(option: 'open' | 'closed') {
-    console.log('Finish battle: ' + option);
+  async finishBattle() {
+     const colRef = collection(this.firestore, `roundStatus`);
+    const snapshot = await getDocs(colRef);
     
-  } 
+    const doc = snapshot.docs.find((doc) => doc.data()['round'] == this.round());
+    if (doc) updateDoc(doc.ref, { isFinish: true });
+    
+
+  }
+
+  async startBattle() {
+     const colRef = collection(this.firestore, `roundStatus`);
+    const snapshot = await getDocs(colRef);
+    
+    const doc = snapshot.docs.find((doc) => doc.data()['round'] == this.round());
+    if (doc) updateDoc(doc.ref, { isFinish: false });
+    
+
+  }
 
   async clearCollection() {
-        const colRef = collection(this.firestore, 'votes');
+    const colRef = collection(this.firestore, `votes-${this.round()}`);
     const snapshot = await getDocs(colRef);
 
-    const deletions = snapshot.docs.map((d) => deleteDoc(doc(this.firestore, 'votes', d.id)));
+    const deletions = snapshot.docs.map((d) => {
+      if (d.data()['s'] == 'y') return new Promise<void>(() => {});
+
+      return deleteDoc(doc(this.firestore, `votes-${this.round()}`, d.id));
+    });
     await Promise.all(deletions);
 
-    console.log(`Cleared ${snapshot.size} docs from 'votes'`);
+    console.log(`Cleared ${snapshot.size} docs from 'votes-${this.round()}'`);
   }
 }

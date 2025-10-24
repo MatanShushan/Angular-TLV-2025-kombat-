@@ -4,17 +4,10 @@ import { VoteComponent } from './vote/vote.component';
 import { AdminComponent } from './admin/admin.component';
 
 export const routes: Routes = [
-    {
-        path: 'poll',
-        component: PollComponent,
-    },
-    {
-        path: 'vote',
-        component: VoteComponent,
-    },
-    {
-        path: 'admin',
-        component: AdminComponent,
-    }
+  { path: 'poll/:round', component: PollComponent },
+  { path: 'vote/:round', component: VoteComponent },
+  {
+    path: 'admin',
+    component: AdminComponent,
+  },
 ];
-    

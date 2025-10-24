@@ -19,6 +19,9 @@
   background: linear-gradient(#2a861a, #39a321);
   border: 3px solid #e3e726; /* yellow border */
   box-shadow: 0 0 0 2px #3a3a3a inset, 0 2px 0 rgba(0,0,0,0.2);
+  &.percent{
+    font-size: 46px;
+  }
 }
 
 .frame {

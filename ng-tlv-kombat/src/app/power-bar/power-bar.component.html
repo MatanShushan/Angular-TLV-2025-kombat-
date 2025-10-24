@@ -4,3 +4,8 @@
     <div class="fill" [style.width.%]="percent()"></div>
   </div>
 </div>
+@if(isFinish()){
+<div class="power-bar" [class.right]="isRight()">
+  <div class="label percent">{{ displayPercent() }}%</div>
+</div>
+}

@@ -1,13 +1,19 @@
 <div class="vote-page" role="main">
   <h1 class="title">Admin</h1>
-  <div class="buttons">
-    <button type="button" class="btn btn-open" (click)="finishBattle('open')" aria-label="Vote Open">Open</button>
-    <button type="button" class="btn btn-closed" (click)="finishBattle('closed')" aria-label="Vote Closed">Closed</button>
-    <br/>  
-    <br/>  
-    <br/>  
-    <br/>  
-    <br/>  
-    <button type="button" class="btn btn-closed" (click)="clearCollection()" aria-label="Vote Closed">clear</button>
+
+  <div class="round-buttons">
+    <button type="button" class="btn btn-open" (click)="round.set(1)" aria-label="Round 1">1</button>
+    <button type="button" class="btn btn-open" (click)="round.set(2)" aria-label="Round 2">2</button>
+    <button type="button" class="btn btn-open" (click)="round.set(3)" aria-label="Round 3">3</button>
   </div>
+  <h1 >Round {{round()}}</h1>
+    
+  
+
+  <div class="action-buttons">
+    <button type="button" class="btn btn-open" (click)="startBattle()">Start</button>
+    <button type="button" class="btn btn-closed" (click)="finishBattle()">Finish</button>
+  </div>
+  
+  <button type="button" class="btn btn-closed" (click)="clearCollection()" aria-label="Vote Closed">clear</button>
 </div>

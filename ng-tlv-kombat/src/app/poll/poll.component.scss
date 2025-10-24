@@ -26,11 +26,11 @@
     background-position: center top;
     background-repeat: no-repeat;
     image-rendering: pixelated;
-    &.round-first {
+    &.round-1 {
       background-image: url('/arena.png');
     }
-    &.round-second {
-      background-image: url('/arena.png');
+    &.round-2 {
+      background-image: url('/arena2.png');
     }
   }
   
@@ -62,7 +62,7 @@
     height: 40vh;
   }
   
-  .qr-container img {
+  .qr-container qrcode {
     height: 60vh;
     width: auto;
     margin-bottom: 60vh;

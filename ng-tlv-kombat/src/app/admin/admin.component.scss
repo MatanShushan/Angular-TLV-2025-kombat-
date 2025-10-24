@@ -37,6 +37,36 @@
   gap: 14px;
 }
 
+.round-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.round-buttons .btn {
+  width: auto;
+  min-width: 80px;
+  padding: 16px 24px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.action-buttons .btn {
+  width: auto;
+  min-width: 140px;
+  padding: 18px 32px;
+}
+
 .btn {
   -webkit-tap-highlight-color: transparent;
   width: min(86vw, 380px);
