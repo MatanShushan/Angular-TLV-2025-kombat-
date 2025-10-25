@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Firestore, addDoc, collection, collectionData } from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
 interface Vote {
@@ -18,17 +18,24 @@ export class VoteComponent {
   round = this.router.snapshot.params['round'];
   votesCollection = collection(this.firestore, `votes-${this.round}`);
   
+  hasVoted = signal<'open' | 'closed' | null>(null);
+  showCelebration = signal(false);
+  
   vote(option: 'open' | 'closed') {
     const vote = this.getFromLocalStorage();
-    if (vote) {
-      return;
-    }
+    // if (vote) {
+    //   return;
+    // }
     this.setInLocalStorage(option);  
     const newVote: Vote = {
         vote: option,
         voter: 'user'
     };
     addDoc(this.votesCollection, newVote);
+    
+    // Trigger celebration animation
+    this.hasVoted.set(option);
+    this.showCelebration.set(true);
   }
 
   setInLocalStorage(option: 'open' | 'closed') {
