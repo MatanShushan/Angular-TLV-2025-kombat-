@@ -15,14 +15,27 @@ interface Vote {
 export class VoteComponent {
   router = inject(ActivatedRoute);
   firestore = inject(Firestore);
-  votesCollection = collection(this.firestore, `votes-${this.router.snapshot.params['round']}`);
-
+  round = this.router.snapshot.params['round'];
+  votesCollection = collection(this.firestore, `votes-${this.round}`);
+  
   vote(option: 'open' | 'closed') {
-    
+    const vote = this.getFromLocalStorage();
+    if (vote) {
+      return;
+    }
+    this.setInLocalStorage(option);  
     const newVote: Vote = {
         vote: option,
         voter: 'user'
     };
     addDoc(this.votesCollection, newVote);
+  }
+
+  setInLocalStorage(option: 'open' | 'closed') {
+    localStorage.setItem(`vote-${this.round}`, option);
+  }
+
+  getFromLocalStorage() {
+    return localStorage.getItem(`vote-${this.round}`) as 'open' | 'closed' | null;
   }
 }

@@ -1,0 +1,37 @@
+[debug] [2025-10-25T17:45:00.453Z] ----------------------------------------------------------------------
+[debug] [2025-10-25T17:45:00.454Z] Command:       /Users/mshushan/.nvm/versions/node/v20.19.0/bin/node /Users/mshushan/.nvm/versions/node/v20.19.0/bin/firebase deploy
+[debug] [2025-10-25T17:45:00.455Z] CLI Version:   14.19.1
+[debug] [2025-10-25T17:45:00.455Z] Platform:      darwin
+[debug] [2025-10-25T17:45:00.455Z] Node Version:  v20.19.0
+[debug] [2025-10-25T17:45:00.455Z] Time:          Sat Oct 25 2025 20:45:00 GMT+0300 (שעון ישראל (קיץ))
+[debug] [2025-10-25T17:45:00.455Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-10-25T17:45:00.530Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-10-25T17:45:00.531Z] > authorizing via signed-in user (matan22993@gmail.com)
+[debug] [2025-10-25T17:45:00.531Z] [iam] checking project ng-tlv-kombat for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-10-25T17:45:00.531Z] Checked if tokens are valid: false, expires at: 1761412209205
+[debug] [2025-10-25T17:45:00.531Z] Checked if tokens are valid: false, expires at: 1761412209205
+[debug] [2025-10-25T17:45:00.531Z] > refreshing access token with scopes: []
+[debug] [2025-10-25T17:45:00.532Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-10-25T17:45:00.532Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-10-25T17:45:00.772Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-10-25T17:45:00.772Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-10-25T17:45:00.783Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ng-tlv-kombat:testIamPermissions [none]
+[debug] [2025-10-25T17:45:00.783Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ng-tlv-kombat:testIamPermissions x-goog-quota-user=projects/ng-tlv-kombat
+[debug] [2025-10-25T17:45:00.783Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ng-tlv-kombat:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-10-25T17:45:01.823Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ng-tlv-kombat:testIamPermissions 200
+[debug] [2025-10-25T17:45:01.823Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ng-tlv-kombat:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-10-25T17:45:01.823Z] Checked if tokens are valid: true, expires at: 1761417899772
+[debug] [2025-10-25T17:45:01.823Z] Checked if tokens are valid: true, expires at: 1761417899772
+[debug] [2025-10-25T17:45:01.823Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ng-tlv-kombat [none]
+[debug] [2025-10-25T17:45:02.302Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ng-tlv-kombat 200
+[debug] [2025-10-25T17:45:02.302Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ng-tlv-kombat {"projectId":"ng-tlv-kombat","projectNumber":"71058915589","displayName":"ng-tlv-kombat","name":"projects/ng-tlv-kombat","resources":{"hostingSite":"ng-tlv-kombat"},"state":"ACTIVE","etag":"1_78b7f37a-a046-4cf8-b3f4-b15413ae78ba"}
+[info] 
+[info] === Deploying to 'ng-tlv-kombat'...
+[info] 
+[info] i  deploying firestore, hosting 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2025-10-25T17:45:02.306Z] Checked if tokens are valid: true, expires at: 1761417899772
+[debug] [2025-10-25T17:45:02.306Z] Checked if tokens are valid: true, expires at: 1761417899772
+[debug] [2025-10-25T17:45:02.306Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/ng-tlv-kombat/databases/(default) [none]
